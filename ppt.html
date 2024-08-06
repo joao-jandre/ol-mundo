@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        div {
+            border: 2px solid black;
+            width: 40%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="exercícios/pedra-papel-tesoura.html">
+            <p>Pedra Papel Tesoura</p>
+        </a>
+        <p>jogo da forca</p>
+    </div>
+
+    <button id="botão">meu botão inútil</button>
+</body>
+<h1> Jogo Pedra,Papel, Tesoura</h1>
+<p>Escolha uma opção: </p>
+<button id="pedra">Pedra</button>
+<button id="papel">Papel</button>
+<button id="tesoura">Tesoura</button>
+<p id="resultado"></p>
+
+<script>
+    function geraJogadaAleatoria() {
+        const opcoes = ['pedra', 'papel', 'tesoura']
+        const opcaoAleatoria = Math.floor(Math.random() * 3)
+        return opcoes[opcaoAleatoria]
+    }
+
+    function jogar(jogadaDojogador) {
+        const jogadaDoComputador = geraJogadaAleatoria()
+
+        if (jogadaDoJogador === jogadaDoComputador) {
+            resultado = 'Empate!'
+        } else if (
+            (jogadaDoJogador === 'pedra' && jogadaDoComputador === 'tesoura')||
+                (jogadaDoJogador === 'tesoura' && jogadaDoComputador === 'papel')||
+                    (jogadaDoJogador === 'papel' && jogadaDoComputador === 'pedra')) {
+            resultado = 'Você ganhou!! Parabéns)'
+        } else {
+            resultado = 'Você perdeu!'
+        }
+
+        document.getelementById('resultado').innerText = resultado
+    }
+
+    const pedra = document.getElementById('pedra')
+    pedra.addEventListener('click', function () {
+        alert(geraJogadaAleatoria())
+    })
+
+    const papel = document.getElementById('papel');
+    pedra.addEventlister('click', function(){
+        jogar('papel')
+    })
+
+    const tesoura = document.getElementById('tesoua');
+    pedra.addEventlister('click', function(){
+        jogar('tesoura')
+    })
+
+</script>
+</body>
+
+</html>

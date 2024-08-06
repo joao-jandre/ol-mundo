@@ -42,5 +42,25 @@ let primeiro = vetor [0]
 let ultimo = vetor [4]
 console.log(primeiro,ultimo)
  
-// Ex. 07 
-vetor = []
+// Ex.07
+vetor = ['vermelho', 'verde', 'azul']
+
+for (let i = 0; i < vetor.length; i++) {
+    console.log(vetor[i])
+}
+// Ex. 08
+var idade = 17
+if(idade < 18){
+    console.log("Menor de idade!")
+}else{
+    console.log("Maior de idade!")
+}
+// Ex. 09
+var nota = 2
+if(nota >= 7){
+    console.log("aprovado")
+}else if (nota < 7 || nota>5){
+    console.log("recuperaçao")
+}else {
+    console.log("reprovado")
+}
